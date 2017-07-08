@@ -397,6 +397,8 @@ namespace BasicExercise
             System.Console.WriteLine(str.Substring(0, 6));
             System.Console.WriteLine(str.Replace("w", "G"));
 
+            //Something Changed
+
         }
 
         ///create a new string from a given string where the first 

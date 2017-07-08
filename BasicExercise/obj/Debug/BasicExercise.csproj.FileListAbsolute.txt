@@ -1,0 +1,6 @@
+C:\my project\BasicExercise\BasicExercise\bin\Debug\BasicExercise.exe.config
+C:\my project\BasicExercise\BasicExercise\bin\Debug\BasicExercise.exe
+C:\my project\BasicExercise\BasicExercise\bin\Debug\BasicExercise.pdb
+C:\my project\BasicExercise\BasicExercise\obj\Debug\BasicExercise.csprojResolveAssemblyReference.cache
+C:\my project\BasicExercise\BasicExercise\obj\Debug\BasicExercise.exe
+C:\my project\BasicExercise\BasicExercise\obj\Debug\BasicExercise.pdb

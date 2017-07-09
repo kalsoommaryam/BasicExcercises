@@ -12,29 +12,15 @@ namespace BasicExercise
         static void Main(string[] args)
         {
             CreateMenu();
-            // RemoveSpecifiedCharacter();
-            //InsertANewString();
-            //ChangeThePositions();
-            // NegativeAndOneIsPositive();
-            // Triple();
-            //AbsoluteValue();
-            //AbsoluteValue();
-            //summing();
-            // ConvertIntoLowercase();
-            //IntegerBetweenRange();
-            //FindTheLongestWord();
-            //OddNumbers();
-            //SumOfPrimeNumbers();
-            //print();
-            //ReverseString();
-            //FileSize();
-            //ConvertDecimal();
-            //CopiesOfNewString();
-           // MultipleOfPositiveNum();
-
-
-                Console.ReadLine();
-
+            //RemoveString();
+            //NewStringOfTwoCharacters();
+            //NearestValue();
+            //FindLoestAndLargest();
+            //ConvertUpperCase();
+            //LengthOfString();
+            OddPositionOfChracter();
+            Console.ReadLine();
+            //CheckRange();
             Run:
             ConsoleKey key = ReadMenue();
             RunAssignment(key);
@@ -65,13 +51,31 @@ namespace BasicExercise
             Console.WriteLine("D - Press D to  DisplaysARectangle.");
 
             Console.WriteLine("E - Press E to ConvertFromCelsiusToKelvin.");
-            Console.WriteLine("F - Press F to run PrintAverage.");
-            Console.WriteLine("G - Press G to separated by blank spaces.");
-            Console.WriteLine("H - Press H to run DisplaysARectangle.");
-            Console.WriteLine("I - Press I to ConvertFromCelsiusToKelvin.");
-            Console.WriteLine("J - Press J to run PrintAverage.");
-            Console.WriteLine("K - Press K to separated by blank spaces.");
-            Console.WriteLine("L - Press L to run PrintAverage.");
+            Console.WriteLine("F - Press F to Remove Specified Character.");
+            Console.WriteLine("G - Press G to Insert A New String.");
+            Console.WriteLine("H - Press H to  run Change The Positions.");
+            Console.WriteLine("I - Press I to Negative And One Is Positive.");
+            Console.WriteLine("J - Press J to run Triple");
+            Console.WriteLine("K - Press K to  Absolute Value.");
+            Console.WriteLine("L - Press L to run summing.");
+
+            Console.WriteLine("M - Press G to  Less And Greater Number.");
+            Console.WriteLine("N - Press H to  run Change The Positions.");
+            Console.WriteLine("O - Press I to Negative And One Is Positive.");
+            Console.WriteLine("P - Press J to Check Range");
+            Console.WriteLine("Q - Press K to  Absolute Value.");
+            Console.WriteLine("R - Press L to run Absolute Value.");
+
+            Console.WriteLine("S - Press G to Insert A New String.");
+            Console.WriteLine("T - Press H to  run Change The Positions.");
+            Console.WriteLine("U - Press I to Negative And One Is Positive.");
+            Console.WriteLine("V - Press J to run Triple");
+            Console.WriteLine("W - Press K to  Absolute Value.");
+            Console.WriteLine("X - Press L to run Absolute Value.");
+            Console.WriteLine("Y - Press L to run Absolute Value.");
+
+
+
 
             Console.WriteLine("00 - Press Z to exit the program.");
 
@@ -134,13 +138,64 @@ namespace BasicExercise
                     ConvertFromCelsiusToKelvin();
                     break;
                 case ConsoleKey.F:
-
+                    RemoveSpecifiedCharacter();
                     break;
                 case ConsoleKey.G:
-
+                    InsertANewString();
                     break;
                 case ConsoleKey.H:
-
+                    ChangeThePositions();
+                    break;
+                case ConsoleKey.I:
+                    NegativeAndOneIsPositive();
+                    break;
+                case ConsoleKey.J:
+                    Triple();
+                    break;
+                case ConsoleKey.K:
+                    AbsoluteValue();
+                    break;
+                case ConsoleKey.L:
+                    summing();
+                    break;
+                case ConsoleKey.M:
+                    ConvertIntoLowercase();
+                    break;
+                case ConsoleKey.N:
+                    IntegerBetweenRange();
+                    break;
+                case ConsoleKey.O:
+                    FindTheLongestWord();
+                    break;
+                case ConsoleKey.P:
+                    OddNumbers();
+                    break;
+                case ConsoleKey.Q:
+                    SumOfPrimeNumbers();
+                    break;
+                case ConsoleKey.R:
+                    print();
+                    break;
+                case ConsoleKey.S:
+                    ReverseString();
+                    break;
+                case ConsoleKey.T:
+                    FileSize();
+                    break;
+                case ConsoleKey.U:
+                    ConvertDecimal();
+                    break;
+                case ConsoleKey.V:
+                    CopiesOfNewString();
+                    break;
+                case ConsoleKey.W:
+                    MultipleOfPositiveNum();
+                    break;
+                case ConsoleKey.X:
+                    SpecifiedWord();
+                    break;
+                case ConsoleKey.Y:
+                    LessAndGreaterNumber();
                     break;
 
                 case ConsoleKey.Z:
@@ -630,7 +685,7 @@ namespace BasicExercise
 
         }
         /// Write a C# program to find the size of a specified file in bytes
-        
+
         private static void FileSize()
         {
             // Make a reference to a directory.
@@ -649,7 +704,7 @@ namespace BasicExercise
 
         private static void ConvertDecimal()
         {
-           string decValue = "1234";
+            string decValue = "1234";
             string x = int.Parse(decValue).ToString("");
             Console.WriteLine(x);
 
@@ -659,7 +714,7 @@ namespace BasicExercise
         private static void CopiesOfNewString()
         {
             string s3 = "Visual C# Express";
-           System.Console.WriteLine(s3.Substring(10, 7)  + s3.Substring(10, 7)  + s3.Substring(10, 7));
+            System.Console.WriteLine(s3.Substring(10, 7) + s3.Substring(10, 7) + s3.Substring(10, 7));
 
         }
 
@@ -677,13 +732,136 @@ namespace BasicExercise
         {
             string str;
             str = Console.ReadLine();
-            Console.WriteLine((str.Length < 6 && str.Equals("hello")) || (str.StartsWith("hello") && str[5] == ' ')); 
+            Console.WriteLine((str.Length < 6 && str.Equals("hello")) || (str.StartsWith("hello") && str[5] == ' '));
         }
 
-    }
+        private static void LessAndGreaterNumber()
+        {
+            Console.WriteLine("Enter number less than 100");
+            int num1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter number Greater than 100");
+            int num2 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine(num1 <= 100 && num2 >= 100);
+        }
+
+        //check if an integer (from the two given integers) is in the range -10 to 10
+
+        private static void CheckRange()
+        {
+            Console.WriteLine("Input a first number: -5");
+            int num1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Input a second number: 8 ");
+            int num2 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine(((num1 >= -10 && num1 <= 10) || (num2 >= -10 && num2 <= 10)));
+        }
+
+        ///if "HP" appears at second position in a string and returns the string without "HP"
+
+        private static void RemoveString()
+        {
+            string mystr = "PHP Tutorial";
+            string result = mystr.Remove(1, 2);
+            Console.WriteLine(result);
+
+        }
+
+        ///Test Data: PHP
+        /// Sample Output:
+        //ph
+
+        private static void NewStringOfTwoCharacters()
+        {
+            Console.WriteLine("new string is:");
+            string mystring = "PHP";
+            string result = mystring.Remove(2, 1);
+            Console.WriteLine(result);
+        }
 
 
+        private static void FindLoestAndLargest()
+        {
+
+            Console.WriteLine("Input a first number: 15");
+            int num1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Input a second number: 25 ");
+            int num2 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Input a third number: 30 ");
+            int num3 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("largest number is:");
+            Console.WriteLine(Math.Max(num1, Math.Max(num2, num3)));
+            Console.WriteLine("lowest number is:");
+            Console.WriteLine( Math.Min(num1, Math.Min(num2, num3)));
+        }
+
+        /*
+        private static void NearestValue()
+        {
+            Console.WriteLine("Input first integer");
+            int number1 = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Input second integer");
+            int number2 = Int32.Parse(Console.ReadLine());
+
+            int n = 20;
+            if(number1 < n)
+            {
+                Console.WriteLine(number1);
+            }
+            else
+
+        }*/
+
+        /// C# program to create a new string where the first 4 characters will be in lower case. 
+        /// If the string is less than 4 characters then make the whole string in upper case
+
+        private static void ConvertUpperCase()
+        {
+            
+            Console.WriteLine("Input a string");
+            string str = Console.ReadLine();
+            if (str.Length <= 4)
+            {
+                Console.WriteLine(str.ToUpper());
+                
+            }
+            else
+            {
+                Console.WriteLine("exit");
+            }
+
+        }
+        /// check if a given string starts with "w" and immediately followed by two "ww"
+
+        private static void LengthOfString()
+        {
+            Console.WriteLine("input three chrachter");
+            string str = Console.ReadLine();
+            Console.WriteLine(str.Length <= 3);
+        }
+
+        private static void OddPositionOfChracter()
+        {
+            Console.Write("Input a string : ");
+            string str = Console.ReadLine();
+            var result = string.Empty;
+            for (var i = 0; i < str.Length; i++)
+            {
+                if (i % 2 == 0) result += str[i];
+            }
+            Console.WriteLine(result);
+
+        }
+
+
+
     }
+}
 
 
 

@@ -18,9 +18,18 @@ namespace BasicExercise
             //FindLoestAndLargest();
             //ConvertUpperCase();
             //LengthOfString();
-            OddPositionOfChracter();
+            // OddPositionOfChracter()
+            //CountASpecifieDNumber();
+            // CheckNumber();
+            // SumOfAllElementsOfAnArray();
+            //CheckFirstAndLastElementEqual();
+            //CheckLngthOfTwoArrayEqual();
+            //CheckLngthOfTwoArrayEqual();
+            //RotateAnArray();
+            //LargerValueOfArrayElement();
+            NewArrayOfLength();
             Console.ReadLine();
-            //CheckRange();
+            
             Run:
             ConsoleKey key = ReadMenue();
             RunAssignment(key);
@@ -43,6 +52,7 @@ namespace BasicExercise
             Console.WriteLine("05 - Press 5 to run swapping of two numbers.");
             Console.WriteLine("06 - Press 6 to run multiplication of three numbers.");
             Console.WriteLine("07 - Press 7 to run Arithmetic operation");
+
             Console.WriteLine("08 - Press 8 to run MultiplicationTable.");
             Console.WriteLine("09 - Press 9 to run PrintAverage.");
             Console.WriteLine("A - Press A to run Solve Expression");
@@ -59,23 +69,20 @@ namespace BasicExercise
             Console.WriteLine("K - Press K to  Absolute Value.");
             Console.WriteLine("L - Press L to run summing.");
 
-            Console.WriteLine("M - Press G to  Less And Greater Number.");
-            Console.WriteLine("N - Press H to  run Change The Positions.");
-            Console.WriteLine("O - Press I to Negative And One Is Positive.");
-            Console.WriteLine("P - Press J to Check Range");
-            Console.WriteLine("Q - Press K to  Absolute Value.");
-            Console.WriteLine("R - Press L to run Absolute Value.");
+            Console.WriteLine("M - Press M to   Convert Into Lowercase.");
+            Console.WriteLine("N - Press N to  run Integer Between Range.");
+            Console.WriteLine("O - Press O to Find The Longest Word.");
+            Console.WriteLine("P - Press P to Odd Numbers");
+            Console.WriteLine("Q - Press Q to Sum Of Prime Numbers.");
+            Console.WriteLine("R - Press R to run print.");
 
-            Console.WriteLine("S - Press G to Insert A New String.");
-            Console.WriteLine("T - Press H to  run Change The Positions.");
-            Console.WriteLine("U - Press I to Negative And One Is Positive.");
-            Console.WriteLine("V - Press J to run Triple");
-            Console.WriteLine("W - Press K to  Absolute Value.");
-            Console.WriteLine("X - Press L to run Absolute Value.");
-            Console.WriteLine("Y - Press L to run Absolute Value.");
-
-
-
+            Console.WriteLine("S - Press S to  Reverse String");
+            Console.WriteLine("T - Press T to  run File Size(.");
+            Console.WriteLine("U - Press U to Convert Decimal;.");
+            Console.WriteLine("V - Press V to run Copies Of New String");
+            Console.WriteLine("W - Press W to  Multiple Of Positive Num.");
+            Console.WriteLine("X - Press X to run Specified Word.");
+            Console.WriteLine("Y - Press Y to run Less And Greater Number.");
 
             Console.WriteLine("00 - Press Z to exit the program.");
 
@@ -197,7 +204,7 @@ namespace BasicExercise
                 case ConsoleKey.Y:
                     LessAndGreaterNumber();
                     break;
-
+                  
                 case ConsoleKey.Z:
                     Console.WriteLine("Bye bye");
                     break;
@@ -735,6 +742,9 @@ namespace BasicExercise
             Console.WriteLine((str.Length < 6 && str.Equals("hello")) || (str.StartsWith("hello") && str[5] == ' '));
         }
 
+
+        ///C# program to check two given numbers where one is less than 100 and other is greater than 200
+
         private static void LessAndGreaterNumber()
         {
             Console.WriteLine("Enter number less than 100");
@@ -782,6 +792,9 @@ namespace BasicExercise
         }
 
 
+        /// C# program to find the largest and lowest values from three integer values.
+         
+
         private static void FindLoestAndLargest()
         {
 
@@ -796,39 +809,22 @@ namespace BasicExercise
             Console.WriteLine("largest number is:");
             Console.WriteLine(Math.Max(num1, Math.Max(num2, num3)));
             Console.WriteLine("lowest number is:");
-            Console.WriteLine( Math.Min(num1, Math.Min(num2, num3)));
+            Console.WriteLine(Math.Min(num1, Math.Min(num2, num3)));
         }
 
-        /*
-        private static void NearestValue()
-        {
-            Console.WriteLine("Input first integer");
-            int number1 = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("Input second integer");
-            int number2 = Int32.Parse(Console.ReadLine());
-
-            int n = 20;
-            if(number1 < n)
-            {
-                Console.WriteLine(number1);
-            }
-            else
-
-        }*/
 
         /// C# program to create a new string where the first 4 characters will be in lower case. 
         /// If the string is less than 4 characters then make the whole string in upper case
 
         private static void ConvertUpperCase()
         {
-            
+
             Console.WriteLine("Input a string");
             string str = Console.ReadLine();
             if (str.Length <= 4)
             {
                 Console.WriteLine(str.ToUpper());
-                
+
             }
             else
             {
@@ -844,6 +840,9 @@ namespace BasicExercise
             string str = Console.ReadLine();
             Console.WriteLine(str.Length <= 3);
         }
+        ///C# program to create a new string of every other character (odd position) from the first position of a given string
+        ///
+
 
         private static void OddPositionOfChracter()
         {
@@ -858,10 +857,132 @@ namespace BasicExercise
 
         }
 
+        ///C# program to count a specified number in a given array of integers.
 
+        private static void CountASpecifieDNumber()
+        {
+            Console.WriteLine("input an integer");
+            int num = Int32.Parse(Console.ReadLine());
+            int[] number = { 2, 3, 4, 5, 5, 6, 7, 8, 9 };
+            Console.WriteLine("present" + num + "array said");
+            Console.WriteLine(number.Count(n => n == num));
+        }
+
+
+       /// check if a number appears as either the first or last element of an array of integers and the length is 1 or more
+
+        private static void CheckNumber()
+        {
+            Console.WriteLine("input number");
+            int num = Int32.Parse(Console.ReadLine());
+            int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Console.WriteLine((number[0] == num) || number[number.Length - 1] == num);
+
+
+        }
+
+        /// compute the sum of all the elements of an array of integers.
+        
+
+        private static void SumOfAllElementsOfAnArray()
+        {
+            int[] arr = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+            int sum = 0;
+            Console.WriteLine("Sum of all element of an array");
+            for (var i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+
+            }
+            Console.WriteLine(sum);
+
+        }
+
+
+        ///check if the first element and the last element are equal of an array of integers and the length is 1 or more
+
+        private static void CheckFirstAndLastElementEqual()
+        {
+            int[] arr = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+
+            Console.WriteLine("F irst element and the last element are equal of an array ");
+            Console.WriteLine((arr.Length >= 1) && (arr[0].Equals(arr[arr.Length - 1])));
+
+        }
+
+
+        ///a C# program to check if the first element or the last element of the two arrays ( length 1 or more) are equal
+
+        private static void CheckLngthOfTwoArrayEqual()
+        {
+            Console.WriteLine("check if the first element or the last element of the two arrays ( length 1 or more) are equal.");
+            int[] arr1 = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+            Console.WriteLine("Element of first array {0}", string.Join(", ", arr1));
+
+            int[] arr2 = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
+            Console.WriteLine("Element of Second array {0}", string.Join(", ", arr2));
+
+            Console.WriteLine((arr1[0].Equals(arr2[0])) || arr1[arr1.Length - 1].Equals(arr2[arr2.Length - 1]));
+        }
+
+        /// C# program to rotate an array (length 3) of integers in left direction
+
+        private static void RotateAnArray()
+        {
+
+            int[] nums = { 1, 2, 8 };
+            Console.WriteLine("\nArray1: [{0}]", string.Join(", ", nums));
+            var temp = nums[0];
+            for (var i = 0; i < nums.Length - 1; i++)
+            {
+                nums[i] = nums[i + 1];
+            }
+            nums[nums.Length - 1] = temp;
+            Console.WriteLine("\nAfter rotating array becomes: [{0}]", string.Join(", ", nums));
+
+        }
+
+        /// C# program to get the larger value between first and last element of an array (length 3) of integers.
+
+        private static void LargerValueOfArrayElement()
+        {
+            int[] nums = { 1, 2, 5, 7, 8 };
+            Console.WriteLine("\nArray1: [{0}]", string.Join(", ", nums));
+
+            var h_val = nums[0];
+            for (var i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] > nums[0])
+                    h_val = nums[i];
+            }
+            Console.WriteLine("\nHighest value between first and last values of the said array: {0}", h_val);
+
+        }
+
+        /// new array of length containing the middle elements of three arrays (each length 3) of integers.
+
+        private static void NewArrayOfLength()
+        {
+            int[] array1 = { 1, 2, 5 };
+            Console.WriteLine("\nArray1: [{0}]", string.Join(", ", array1));
+
+            int[] array2 = { 0, 3, 8 };
+            Console.WriteLine("\nArray2: [{0}]", string.Join(", ", array2));
+
+            int[] array3 = { -1, 0, 2 };
+            Console.WriteLine("\nArray3: [{0}]", string.Join(", ", array3));
+
+            int[] new_array = { array1[1], array2[1], array3[1] };
+            Console.WriteLine("\nNew array: [{0}]", string.Join(", ", new_array));
+
+
+        }
 
     }
 }
+
+
+
 
 
 

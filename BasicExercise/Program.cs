@@ -11,7 +11,7 @@ namespace BasicExercise
     {
         static void Main(string[] args)
         {
-            CreateMenu();
+           
             //RemoveString();
             //NewStringOfTwoCharacters();
             //NearestValue();
@@ -27,9 +27,11 @@ namespace BasicExercise
             //CheckLngthOfTwoArrayEqual();
             //RotateAnArray();
             //LargerValueOfArrayElement();
-            NewArrayOfLength();
+             NewArrayOfLength();
+
+            CreateMenu();
             Console.ReadLine();
-            
+
             Run:
             ConsoleKey key = ReadMenue();
             RunAssignment(key);
@@ -92,7 +94,7 @@ namespace BasicExercise
         private static ConsoleKey ReadMenue()
         {
             ConsoleKeyInfo key = Console.ReadKey();
-            Console.WriteLine("01 - Press 1 to run write hello and name in new line.");
+            Console.WriteLine("-------------------");
             return key.Key;
         }
 
@@ -204,7 +206,7 @@ namespace BasicExercise
                 case ConsoleKey.Y:
                     LessAndGreaterNumber();
                     break;
-                  
+
                 case ConsoleKey.Z:
                     Console.WriteLine("Bye bye");
                     break;
@@ -273,8 +275,10 @@ namespace BasicExercise
 
         private static void SwapTwoNumbers()
         {
+            
             Console.WriteLine("Enter first number");
             int num1 = Int32.Parse(Console.ReadLine());
+
             Console.WriteLine("Enter second number");
             int num2 = Int32.Parse(Console.ReadLine());
 
@@ -334,7 +338,7 @@ namespace BasicExercise
 
         private static void MultiplicationTable()
         {
-
+            Console.WriteLine("Print table:");
             Console.WriteLine("enter a table value");
             int j = Int32.Parse(Console.ReadLine());
 
@@ -348,6 +352,7 @@ namespace BasicExercise
 
         private static void PrintAverage()
         {
+            Console.WriteLine("Print average of four number");
             Console.WriteLine("Enter first number");
             int a = Int32.Parse(Console.ReadLine());
 
@@ -369,14 +374,16 @@ namespace BasicExercise
 
         private static void SolveExpression()
         {
-            Console.WriteLine("enter first number:");
-            int x = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Solve Expression");
+            Console.WriteLine("Enter first number");
+            int x = Convert.ToInt32(Console.ReadLine());
+
 
             Console.WriteLine("enter second number:");
-            int y = Int32.Parse(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("enter third number:");
-            int z = Int32.Parse(Console.ReadLine());
+            int z = Convert.ToInt32(Console.ReadLine());
 
             int result1;
             result1 = (x + y) * z;
@@ -403,6 +410,7 @@ namespace BasicExercise
 
         private static void SeparatedByBlankspaces()
         {
+            
             Console.WriteLine("Enter a digit");
             int num = Int32.Parse(Console.ReadLine());
 
@@ -418,6 +426,7 @@ namespace BasicExercise
 
         private static void DisplaysARectangle()
         {
+            Console.WriteLine("Display Rectangle");
             Console.WriteLine("Enter a number:");
             int n = Int32.Parse(Console.ReadLine());
 
@@ -452,16 +461,13 @@ namespace BasicExercise
 
         private static void RemoveSpecifiedCharacter()
         {
+            Console.WriteLine("Remove specific character");
             string str = "w3school";
             System.Console.WriteLine(str.Substring(0, 7));
             System.Console.WriteLine(str.Substring(1, 7));
 
             System.Console.WriteLine(str.Substring(0, 6));
-            System.Console.WriteLine(str.Replace("w", "G"));
-
-            //Something Changed
-            //acbgffd
-            //bvbcfgc
+            System.Console.WriteLine(str.Replace("w", "G"))
 
         }
 
@@ -470,6 +476,7 @@ namespace BasicExercise
 
         private static void ChangeThePositions()
         {
+            Console.WriteLine("Change The cracter position");
             string mystring = "Python";
             Console.WriteLine(mystring.Substring(mystring.Length - 1) + mystring.Substring(1, mystring.Length - 2) + mystring.Substring(0, 1));
             string mystring1 = "w3resource";
@@ -482,6 +489,7 @@ namespace BasicExercise
 
         private static void InsertANewString()
         {
+            Console.WriteLine("Add chracter at the front and back");
             string mystring = "The quick brown fox jumps over the lazy dog. ";
             char mychar = 'T';
             string addstring = mychar + mystring + mychar;
@@ -516,7 +524,7 @@ namespace BasicExercise
 
         private static void Triple()
         {
-
+            Console.WriteLine("compute the sum of two given integers");
             Console.WriteLine("enter a number");
             int num1 = Int32.Parse(Console.ReadLine());
 
@@ -545,6 +553,7 @@ namespace BasicExercise
 
         private static void AbsoluteValue()
         {
+            Console.WriteLine("AbsoluteValue value is:");
             Console.WriteLine("enter first number");
             int num1 = Int32.Parse(Console.ReadLine());
             Console.WriteLine("enter second number");
@@ -567,6 +576,7 @@ namespace BasicExercise
 
         private static void summing()
         {
+            Console.WriteLine("Sum of the two given integers");
 
             Console.WriteLine("enter first itegers");
             int x = Int32.Parse(Console.ReadLine());
@@ -583,6 +593,7 @@ namespace BasicExercise
 
         private static void IntegerBetweenRange()
         {
+            Console.WriteLine("check if an given integer is within 20 of 100 or 200");
             Console.WriteLine("Enter integer");
             int number = Int32.Parse(Console.ReadLine());
 
@@ -601,6 +612,7 @@ namespace BasicExercise
 
         private static void ConvertIntoLowercase()
         {
+            Console.WriteLine(" convert a given string into lowercase");
             string mystring = "MARYAM KALSOOM";
 
             Console.WriteLine(mystring.ToLower());
@@ -610,6 +622,8 @@ namespace BasicExercise
 
         private static void FindTheLongestWord()
         {
+            Console.WriteLine("Write a C# Sharp Program to display the following pattern using the alphabet");
+            Console.WriteLine("find the longest word in a string");
             string line = "Write a C# Sharp Program to display the following pattern using the alphabet.";
             string[] words = line.Split(new[] { " " }, StringSplitOptions.None);
             string word = "";
@@ -642,22 +656,26 @@ namespace BasicExercise
 
 
         }
-
+        /// sm of prime number
         private static void SumOfPrimeNumbers()
         {
+            Console.WriteLine("sum of prime number:");
             int n = 2, totalPrimeNumbers = 1, x;
             double sumOfPrimes = 2;
 
             while (n <= 500)
             {
                 // test if n is prime
+
                 for (x = 2; x < n; x++)
                 {
                     if ((n % x) != 0)
                     {
                         sumOfPrimes = sumOfPrimes + n;
                         totalPrimeNumbers++;
+
                         // change value of x to end for loop
+
                         x = n + 1;
                     }
                 }
@@ -671,31 +689,39 @@ namespace BasicExercise
 
         private static void print()
         {
+            Console.WriteLine("Sum of the digits of the said integer: 3");
             Console.Write("Input  a number(integer): ");
             int n = Convert.ToInt32(Console.ReadLine());
+
             int sum = 0;
+
             while (n != 0)
             {
                 sum += n % 10;
                 n /= 10;
             }
+
             Console.WriteLine("Sum of the digits of the said integer: " + sum);
         }
 
 
         private static void ReverseString()
         {
+            Console.WriteLine("Display the pattern like pyramid using the alphabet");
+            Console.WriteLine("now reverse the string:");
             string s1 = " Display the pattern like pyramid using the alphabet";
             char[] arr = s1.ToCharArray();
             Array.Reverse(arr);
             Console.WriteLine(arr);
 
         }
+
         /// Write a C# program to find the size of a specified file in bytes
 
         private static void FileSize()
         {
             // Make a reference to a directory.
+            Console.WriteLine("File size in byte");
             DirectoryInfo di = new DirectoryInfo("C:/Users/kalsoom/Videos");
 
             // Get a reference to each file in that directory.
@@ -711,19 +737,23 @@ namespace BasicExercise
 
         private static void ConvertDecimal()
         {
+            Console.WriteLine("convert a decimal number to hexadecimal number");
             string decValue = "1234";
             string x = int.Parse(decValue).ToString("");
             Console.WriteLine(x);
 
         }
 
+        ///Taking Last chracter from given string
 
         private static void CopiesOfNewString()
         {
-            string s3 = "Visual C# Express";
-            System.Console.WriteLine(s3.Substring(10, 7) + s3.Substring(10, 7) + s3.Substring(10, 7));
+            string s3 = "Visual C# Express.";
+            System.Console.WriteLine(s3.Substring(10, 8) + s3.Substring(10, 8) + s3.Substring(10, 8));
 
         }
+
+        ///C# program to check if a given positive number is a multiple of 3 or a multiple of 7.
 
         private static void MultipleOfPositiveNum()
         {
@@ -734,6 +764,9 @@ namespace BasicExercise
                 Console.WriteLine(x % 3 == 0 || x % 7 == 0);
             }
         }
+
+        ///starts with a specified word
+        ///arts with a specified word. Go to the editor
 
         private static void SpecifiedWord()
         {
@@ -747,6 +780,8 @@ namespace BasicExercise
 
         private static void LessAndGreaterNumber()
         {
+            Console.WriteLine(" check two given numbers where one is less than 100 and other is greater than 200");
+
             Console.WriteLine("Enter number less than 100");
             int num1 = Int32.Parse(Console.ReadLine());
 
@@ -760,6 +795,8 @@ namespace BasicExercise
 
         private static void CheckRange()
         {
+            Console.WriteLine("if an integer (from the two given integers) is in the range -10 to 10");
+
             Console.WriteLine("Input a first number: -5");
             int num1 = Int32.Parse(Console.ReadLine());
 
@@ -769,15 +806,18 @@ namespace BasicExercise
             Console.WriteLine(((num1 >= -10 && num1 <= 10) || (num2 >= -10 && num2 <= 10)));
         }
 
+
         ///if "HP" appears at second position in a string and returns the string without "HP"
 
         private static void RemoveString()
         {
+            Console.WriteLine("Original string is:PHP Tutorial");
             string mystr = "PHP Tutorial";
             string result = mystr.Remove(1, 2);
             Console.WriteLine(result);
 
         }
+
 
         ///Test Data: PHP
         /// Sample Output:
@@ -793,11 +833,10 @@ namespace BasicExercise
 
 
         /// C# program to find the largest and lowest values from three integer values.
-         
-
+        
         private static void FindLoestAndLargest()
         {
-
+            Console.WriteLine("Largest and Lowest number");
             Console.WriteLine("Input a first number: 15");
             int num1 = Int32.Parse(Console.ReadLine());
 
@@ -806,8 +845,10 @@ namespace BasicExercise
 
             Console.WriteLine("Input a third number: 30 ");
             int num3 = Int32.Parse(Console.ReadLine());
+
             Console.WriteLine("largest number is:");
             Console.WriteLine(Math.Max(num1, Math.Max(num2, num3)));
+
             Console.WriteLine("lowest number is:");
             Console.WriteLine(Math.Min(num1, Math.Min(num2, num3)));
         }
@@ -841,13 +882,12 @@ namespace BasicExercise
             Console.WriteLine(str.Length <= 3);
         }
         ///C# program to create a new string of every other character (odd position) from the first position of a given string
-        ///
-
-
+      
         private static void OddPositionOfChracter()
         {
             Console.Write("Input a string : ");
             string str = Console.ReadLine();
+
             var result = string.Empty;
             for (var i = 0; i < str.Length; i++)
             {
@@ -863,18 +903,21 @@ namespace BasicExercise
         {
             Console.WriteLine("input an integer");
             int num = Int32.Parse(Console.ReadLine());
+
             int[] number = { 2, 3, 4, 5, 5, 6, 7, 8, 9 };
+
             Console.WriteLine("present" + num + "array said");
             Console.WriteLine(number.Count(n => n == num));
         }
 
 
-       /// check if a number appears as either the first or last element of an array of integers and the length is 1 or more
+        /// check if a number appears as either the first or last element of an array of integers and the length is 1 or more
 
         private static void CheckNumber()
         {
             Console.WriteLine("input number");
             int num = Int32.Parse(Console.ReadLine());
+
             int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             Console.WriteLine((number[0] == num) || number[number.Length - 1] == num);
 
@@ -882,7 +925,7 @@ namespace BasicExercise
         }
 
         /// compute the sum of all the elements of an array of integers.
-        
+
 
         private static void SumOfAllElementsOfAnArray()
         {
@@ -903,6 +946,7 @@ namespace BasicExercise
 
         private static void CheckFirstAndLastElementEqual()
         {
+            Console.WriteLine("Check First And Last Element Equal");
             int[] arr = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
 
             Console.WriteLine("F irst element and the last element are equal of an array ");
@@ -916,6 +960,7 @@ namespace BasicExercise
         private static void CheckLngthOfTwoArrayEqual()
         {
             Console.WriteLine("check if the first element or the last element of the two arrays ( length 1 or more) are equal.");
+
             int[] arr1 = { 1, 2, 2, 3, 3, 4, 5, 6, 5, 7, 7, 7, 8, 8, 1 };
             Console.WriteLine("Element of first array {0}", string.Join(", ", arr1));
 
@@ -956,7 +1001,7 @@ namespace BasicExercise
                     h_val = nums[i];
             }
             Console.WriteLine("\nHighest value between first and last values of the said array: {0}", h_val);
-
+             
         }
 
         /// new array of length containing the middle elements of three arrays (each length 3) of integers.
